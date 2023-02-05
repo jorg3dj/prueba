@@ -1,0 +1,26 @@
+{{#if url}}
+
+<form action="/editar/{{url._id}}" method="post">
+<input type="hidden" name="_csrf" value="{{csrfToken}}" />
+    <input value= "{{url.shortURL}}" type="text" placeholder="ingrese shortURL" 
+    name="shortURL" class="form-control my-2">
+    <button type="submit" class="btn btn-warning w-100 mb-2">
+        Editar
+    </button>
+</form>
+
+    {{else}}
+
+<form action="/" method="post">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+    <input type="text" placeholder="ingrese url" 
+    name="origin" class="form-control my-2">
+    <input type="text" placeholder="ingrese shortURL" 
+    name="shortURL" class="form-control my-2">
+    <button type="submit" class="btn btn-primary w-100 mb-2">
+        Agregar Url
+    </button>
+</form>
+
+{{/if}}
+
